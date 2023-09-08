@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Chakra Petch", sans-serif;
+} */
+
+.bg-golden{
+  background-color: #d6d6d4;
+}
+
+/* Example CSS file */
+
+.border-gold {
+  border: 2px solid #FFD700; /* Gold color */
+}
+
+.bg-gold {
+  background-color: #FFD700; /* Gold color */
+}
+
+.text-gold {
+  color: #FFD700; /* Gold color */
+}
+
+.text-dark{
+  color:#000;
+}
+
+.logo-text {
+  margin-top: 26px;
+  font-size: 30px;
+}
+
+.pricecard{
+  border-radius: 20px;
+}
+
+.logo-brand{
+  display:flex;
+}
+
+.text-gradient {
+  background: linear-gradient(#e4c307 0%, #16a6ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+body {
+  @apply flex min-h-screen flex-col;
+  background-image: url("/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-wrapper {
+  @apply items-center lg:justify-between;
+}
+
+.gradient-border {
+  @apply relative;
+}
+
+.gradient-border::before {
+  @apply absolute inset-0 rounded-2xl p-0.5 transition-all duration-300;
+  content: "";
+  background: linear-gradient(
+    160deg,
+    #3e1f5e 20%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.gradient-border:hover::before {
+  @apply p-1;
+  background: linear-gradient(160deg, #3e1f5e 0%, #3e1f5e 100%);
+}
+
+.progress-bar3 {
+  height: 18px;
+  border-radius: 4px;
+  background-image: linear-gradient(to right, #d9cb4c, #5afa9d, #007aff, #7DC8E8, #5856d6, #ff2d55);
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.progress-infinite .progress-bar3 {
+  width: 100%;
+  background-image: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #7DC8E8, #5856d6, #ff2d55);
+  animation: colorAnimation 1s infinite;
+}
+.progress {
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 3px 2px #000, 0 1px rgb(169 31 31);
+}
+@keyframes colorAnimation {
+  0% {
+    background-image: linear-gradient(to right, #e0dd13, #5ac8fa, #007aff, #7DC8E8, #5856d6, #ff2d55);
+  }
+  20% {
+    background-image: linear-gradient(to right, #fae25a, #007aff, #7DC8E8, #5856d6, #ff2d55, #4cd964);
+  }
+  40% {
+    background-image: linear-gradient(to right, #ffa600, #7DC8E8, #5856d6, #ff2d55, #4cd964, #5ac8fa);
+  }
+  60% {
+    background-image: linear-gradient(to right, #cce87d, #5856d6, #ff2d55, #4cd964, #5ac8fa, #007aff);
+  }
+  100% {
+    background-image: linear-gradient(to right, #5856d6, #ff2d55, #4cd964, #5ac8fa, #007aff, #7DC8E8);
+  }
+}
